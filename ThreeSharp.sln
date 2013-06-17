@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeSharp", "ThreeSharp.csproj", "{0EED316D-C3A2-408D-8F77-F8A3DE5B07A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenTK", "OpenTK", "{DBACDEAB-9729-4B1C-B111-52630D6F8348}"
+	ProjectSection(SolutionItems) = preProject
+		OpenTK.dll = OpenTK.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestThreeSharp", "..\TestThreeSharp\TestThreeSharp.csproj", "{D535C24F-7CDB-492D-B790-270F1AE91C9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EED316D-C3A2-408D-8F77-F8A3DE5B07A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0EED316D-C3A2-408D-8F77-F8A3DE5B07A3}.Debug|x86.Build.0 = Debug|Any CPU
+		{0EED316D-C3A2-408D-8F77-F8A3DE5B07A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{0EED316D-C3A2-408D-8F77-F8A3DE5B07A3}.Release|x86.Build.0 = Release|Any CPU
+		{D535C24F-7CDB-492D-B790-270F1AE91C9A}.Debug|x86.ActiveCfg = Debug|x86
+		{D535C24F-7CDB-492D-B790-270F1AE91C9A}.Debug|x86.Build.0 = Debug|x86
+		{D535C24F-7CDB-492D-B790-270F1AE91C9A}.Release|x86.ActiveCfg = Release|x86
+		{D535C24F-7CDB-492D-B790-270F1AE91C9A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ThreeSharp.csproj
+	EndGlobalSection
+EndGlobal
