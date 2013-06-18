@@ -37,8 +37,13 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="renderers\OpenGLRenderer.cs" />
+    <Compile Include="cameras\PerspectiveCamera.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="renderers\" />
+    <Folder Include="cameras\" />
+  </ItemGroup>
 </Project>
