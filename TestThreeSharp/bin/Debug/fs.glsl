@@ -1,6 +1,6 @@
 
 vec4 color;
-out vec4 outputColor;
+invariant vec4 outputColor;
 
 void 
 main()
