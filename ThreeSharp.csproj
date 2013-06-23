@@ -40,10 +40,13 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="renderers\OpenGLRenderer.cs" />
     <Compile Include="cameras\PerspectiveCamera.cs" />
+    <Compile Include="extras\geometries\CubeGeometry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="renderers\" />
     <Folder Include="cameras\" />
+    <Folder Include="extras\" />
+    <Folder Include="extras\geometries\" />
   </ItemGroup>
 </Project>

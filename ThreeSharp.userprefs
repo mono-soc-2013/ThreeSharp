@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="renderers/OpenGLRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestThreeSharp/TestWindow.cs">
     <Files>
-      <File FileName="renderers/OpenGLRenderer.cs" Line="21" Column="4" />
-      <File FileName="cameras/PerspectiveCamera.cs" Line="11" Column="3" />
+      <File FileName="TestThreeSharp/Tester.cs" Line="46" Column="4" />
+      <File FileName="TestThreeSharp/TestWindow.cs" Line="33" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

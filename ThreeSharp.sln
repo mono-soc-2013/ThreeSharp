@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenTK", "OpenTK", "{DBACDE
 		OpenTK.dll = OpenTK.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestThreeSharp", "..\TestThreeSharp\TestThreeSharp.csproj", "{D535C24F-7CDB-492D-B790-270F1AE91C9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestThreeSharp", "TestThreeSharp\TestThreeSharp.csproj", "{D535C24F-7CDB-492D-B790-270F1AE91C9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
