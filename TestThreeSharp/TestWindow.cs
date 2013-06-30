@@ -70,8 +70,6 @@ namespace TestThreeSharp
 //			GL.Vertex3(0.0f,1.0f,4.0f);
 //			GL.End();
 
-
-
 			GL.EnableVertexAttribArray(attribute_vpos);
 			GL.EnableVertexAttribArray(attribute_vcol);
 			GL.DrawArrays(BeginMode.Triangles,0,3);
@@ -138,6 +136,16 @@ namespace TestThreeSharp
 			GL.BindBuffer(BufferTarget.ArrayBuffer,0);
 
 		}
+
+//		[STAThread]
+//		public static void Main(String[] args)
+//		{
+//			using(TestWindow win = new TestWindow())
+//			{
+//				win.Run();
+//
+//			}
+//		}
 
 	}
 }

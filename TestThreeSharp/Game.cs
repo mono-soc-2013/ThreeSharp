@@ -79,8 +79,7 @@ namespace TestThreeSharp
         }
  
         /// <summary>Creates a 800x600 window with the specified title.</summary>
-        public Game()
-            : base(800, 600, GraphicsMode.Default, "OpenTK Quick Start Sample")
+        public Game(): base(800, 600, GraphicsMode.Default, "OpenTK Quick Start Sample")
         {
             VSync = VSyncMode.On;
         }
@@ -116,7 +115,7 @@ namespace TestThreeSharp
         {
             // load texture 
             GL.GenTextures(1, out texture);
- 
+ 			
             //Still required else TexImage2D will be applyed on the last bound texture
             GL.BindTexture(TextureTarget.Texture2D, texture);
  
@@ -240,16 +239,16 @@ namespace TestThreeSharp
         /// The main entry point for the application.
         /// </summary>
  
-        [STAThread]
-        static void Main()
-        {
-            // The 'using' idiom guarantees proper resource cleanup.
-            // We request 30 UpdateFrame events per second, and unlimited
-            // RenderFrame events (as fast as the computer can handle).
-            using (Game game = new Game())
-            {
-                game.Run(30.0);
-            }
-        }
+//        [STAThread]
+//        static void Main()
+//        {
+//            // The 'using' idiom guarantees proper resource cleanup.
+//            // We request 30 UpdateFrame events per second, and unlimited
+//            // RenderFrame events (as fast as the computer can handle).
+//            using (Game game = new Game())
+//            {
+//                game.Run(30.0);
+//            }
+//        }
     }
 }

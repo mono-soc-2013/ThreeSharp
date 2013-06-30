@@ -22,6 +22,17 @@ namespace ThreeSharp
 		}
 
 
+		public float getMaxAnisotropy()
+		{
+			return 1.0f;
+		}
+
+		public void render(Scene scene, PerspectiveCamera camera)
+		{
+
+		}
+
+
 
 	}
 }
