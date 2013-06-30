@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Tester.cs" />
     <Compile Include="TestWindow.cs" />
+    <Compile Include="Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="vs.glsl">

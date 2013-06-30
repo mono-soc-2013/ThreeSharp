@@ -41,6 +41,10 @@
     <Compile Include="renderers\OpenGLRenderer.cs" />
     <Compile Include="cameras\PerspectiveCamera.cs" />
     <Compile Include="extras\geometries\CubeGeometry.cs" />
+    <Compile Include="scenes\Scene.cs" />
+    <Compile Include="extras\ImageUtils.cs" />
+    <Compile Include="materials\MeshBasicMaterial.cs" />
+    <Compile Include="objects\Mesh.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -48,5 +52,8 @@
     <Folder Include="cameras\" />
     <Folder Include="extras\" />
     <Folder Include="extras\geometries\" />
+    <Folder Include="scenes\" />
+    <Folder Include="materials\" />
+    <Folder Include="objects\" />
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@ namespace TestThreeSharp
 	public class TestWindow : GameWindow
 	{
 		int pgmID;
-
+	
 		int vsID;
 		int fsID;
 

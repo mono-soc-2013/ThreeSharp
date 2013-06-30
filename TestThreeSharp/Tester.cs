@@ -18,36 +18,34 @@ namespace TestThreeSharp
 
 		}
 
-		public static void Main (String[] args)
-		{
-			/*OpenGLRenderer renderr = new OpenGLRenderer();
-			renderr.setSize(600,700);
-
-			PerspectiveCamera camera = new PerspectiveCamera(70.0f,800.0f/600.0f,1.0f,1000.0f);
-			camera.Z_POSSITION = 400.0f;*/
-
-
-//			GLControl control = new GLControl(GraphicsMode.Default,1,0,GraphicsContextFlags.Default);
-//			control.MakeCurrent();
+//		public static void Main (String[] args)
+//		{
+//			/*OpenGLRenderer renderr = new OpenGLRenderer();
+//			renderr.setSize(600,700);
 //
-//			VAOs = new uint[(int)VAO_IDs.NumVAOs];
-
-			//GL.GenVertexArrays((int)VAO_IDs.NumVAOs,VAOs);
-//			init();
-
-
-		
-//			control.SwapBuffers();
-
-			using(TestWindow win = new TestWindow())
-			{
-				win.Run (30.0);
-			}
-
-
-
-
-		}
+//			PerspectiveCamera camera = new PerspectiveCamera(70.0f,800.0f/600.0f,1.0f,1000.0f);
+//			camera.Z_POSSITION = 400.0f;*/
+//
+//
+////			GLControl control = new GLControl(GraphicsMode.Default,1,0,GraphicsContextFlags.Default);
+////			control.MakeCurrent();
+////
+////			VAOs = new uint[(int)VAO_IDs.NumVAOs];
+//
+//			//GL.GenVertexArrays((int)VAO_IDs.NumVAOs,VAOs);
+////			init();
+//
+//
+//		
+////			control.SwapBuffers();
+//
+//			using(TestWindow win = new TestWindow())
+//			{
+//				win.Run (30.0);
+//			}
+//
+//
+//		}
 
 		public static void init ()
 		{

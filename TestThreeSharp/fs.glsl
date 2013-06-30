@@ -1,9 +1,10 @@
-
-vec4 color;
+#version 130
+ 
+in vec4 color;
 out vec4 outputColor;
-
-void 
+ 
+void
 main()
 {
-	outputColor = color;
+    outputColor = color;
 }

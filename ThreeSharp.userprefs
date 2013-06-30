@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="TestThreeSharp/TestWindow.cs">
     <Files>
-      <File FileName="TestThreeSharp/Tester.cs" Line="46" Column="4" />
-      <File FileName="TestThreeSharp/TestWindow.cs" Line="33" Column="4" />
+      <File FileName="objects/Mesh.cs" Line="13" Column="1" />
+      <File FileName="TestThreeSharp/TestWindow.cs" Line="123" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
