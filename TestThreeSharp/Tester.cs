@@ -20,7 +20,10 @@ namespace TestThreeSharp
 		public static void Main (String[] args)
 		{
 
-
+			Tester test = new Tester();
+			
+			test.init();
+			
 
 		}
 
@@ -38,11 +41,10 @@ namespace TestThreeSharp
 
 
 			Texture texture = ImageUtils.loadTexture("textures/crate.gif");
-			texture.anisotropy = renderer.getMaxAnisotropy();
+			texture.Anisotropy = renderer.getMaxAnisotropy();
 
-			Dictionary<string,object> parameters = new Dictionary<string, object>();
-			parameters.Add("map",texture);
-			MeshBasicMaterial material = new MeshBasicMaterial(parameters);
+
+			MeshBasicMaterial material = new MeshBasicMaterial(texture);
 
 			mesh = new Mesh(geometry,material);
 			scene.add(mesh);

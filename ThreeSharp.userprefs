@@ -1,10 +1,33 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestThreeSharp/TestWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="materials/MeshBasicMaterial.cs">
     <Files>
-      <File FileName="objects/Mesh.cs" Line="13" Column="1" />
-      <File FileName="TestThreeSharp/TestWindow.cs" Line="123" Column="3" />
+      <File FileName="TestThreeSharp/Tester.cs" Line="34" Column="1" />
+      <File FileName="materials/MeshBasicMaterial.cs" Line="10" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="TestThreeSharp" expanded="True" />
+          <Node name="ThreeSharp" expanded="True">
+            <Node name="cameras" expanded="True" />
+            <Node name="extras" expanded="True">
+              <Node name="geometries" expanded="True" />
+            </Node>
+            <Node name="materials" expanded="True">
+              <Node name="MeshBasicMaterial.cs" selected="True" />
+            </Node>
+            <Node name="objects" expanded="True" />
+            <Node name="renderers" expanded="True" />
+            <Node name="scenes" expanded="True" />
+            <Node name="textures" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

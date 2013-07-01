@@ -47,6 +47,10 @@
     <Compile Include="objects\Mesh.cs" />
     <Compile Include="loaders\ImageLoader.cs" />
     <Compile Include="textures\Texture.cs" />
+    <Compile Include="Three.cs" />
+    <Compile Include="math\Color.cs" />
+    <Compile Include="materials\Material.cs" />
+    <Compile Include="core\Object3D.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -59,5 +63,7 @@
     <Folder Include="objects\" />
     <Folder Include="loaders\" />
     <Folder Include="textures\" />
+    <Folder Include="math\" />
+    <Folder Include="core\" />
   </ItemGroup>
 </Project>

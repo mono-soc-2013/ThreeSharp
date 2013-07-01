@@ -8,10 +8,15 @@ namespace ThreeSharp
 		{
 		}
 
-		public float anisotropy
-		{
-			get;
-			set;
+		float anisotropy;
+
+		public float Anisotropy {
+			get {
+				return anisotropy;
+			}
+			set {
+				anisotropy = value;
+			}
 		}
 	}
 }

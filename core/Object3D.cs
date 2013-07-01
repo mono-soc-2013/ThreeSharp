@@ -2,11 +2,10 @@ using System;
 
 namespace ThreeSharp
 {
-	public class ImageLoader
+	public class Object3D
 	{
-		public ImageLoader ()
+		public Object3D ()
 		{
-
 		}
 	}
 }

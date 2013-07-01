@@ -6,6 +6,7 @@ namespace ThreeSharp
 	{
 		public Mesh (CubeGeometry geometry,MeshBasicMaterial material)
 		{
+
 		}
 	}
 }

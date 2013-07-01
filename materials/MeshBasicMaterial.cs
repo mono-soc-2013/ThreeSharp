@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace ThreeSharp
 {
-	public class MeshBasicMaterial
+	public class MeshBasicMaterial:Material
 	{
-		public MeshBasicMaterial (Dictionary<string,object> parameters)
+		public MeshBasicMaterial (Texture map)
 		{
+			this.setValues(map);
 		}
 	}
 }
