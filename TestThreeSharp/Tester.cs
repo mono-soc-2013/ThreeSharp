@@ -33,7 +33,7 @@ namespace TestThreeSharp
 			renderer.setSize(width,height);
 
 			camera = new PerspectiveCamera(70.0f,width/(float)height,1.0f,1000.0f);
-			camera.Z_POSSITION = 400.0f;
+			camera.position.Z = 400.0f;
 
 			scene = new Scene();
 

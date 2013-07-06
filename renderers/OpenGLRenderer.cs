@@ -10,15 +10,17 @@ namespace ThreeSharp
 	{
 		private Matrix4 modelviewMatrix, projectionMatrix;
         private Matrix4 rotationviewMatrix;
+		const float rotation_speed = 18.0f;
+		float angle;
 
-		public OpenGLRenderer ():base(800, 600, GraphicsMode.Default, "OpenTK Quick Start Sample")
+		public OpenGLRenderer ():base(800, 768, GraphicsMode.Default, "OpenTK Quick Start Sample")
 		{
 			VSync = VSyncMode.On;
 		}
 
 		public void setSize(int width, int height)
 		{
-			Width = 800;
+			Width = 1024;
 			Height = 600;
 		}
 
@@ -48,7 +50,7 @@ namespace ThreeSharp
 
 			modelviewMatrix = Matrix4.LookAt(0, 4, 7, 0, 0, 0, 0, 1, 0);
  
-            rotationviewMatrix = Matrix4.CreateRotationX((float)Math.PI / 100);
+            rotationviewMatrix = Matrix4.CreateRotationX((float)System.Math.PI / 100);
 		}
 
 		protected override void OnResize(EventArgs e)
@@ -56,10 +58,10 @@ namespace ThreeSharp
  
             base.OnResize(e);
             GL.Viewport(ClientRectangle.X, ClientRectangle.Y, ClientRectangle.Width, ClientRectangle.Height);
-            projectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)Math.PI / 4, Width / (float)Height, 1.0f, 64.0f);
+            projectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)System.Math.PI / 4, Width / (float)Height, 1.0f, 64.0f);
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref projectionMatrix);
- 
+ 			
         }
 
 		protected override void OnUpdateFrame(FrameEventArgs e)
@@ -74,13 +76,13 @@ namespace ThreeSharp
  
             base.OnRenderFrame(e);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            //angle += rotation_speed * (float)e.Time;
-            float translateby = (float)Math.Sin(DateTime.Now.Second) * 0.05f;
+            angle += rotation_speed * (float)e.Time;
+            float translateby = (float)System.Math.Sin(DateTime.Now.Second) * 0.05f;
             rotationviewMatrix = Matrix4.CreateTranslation(0f, 0f, translateby);
  
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref modelviewMatrix);
-            //GL.Rotate(angle, 0.0f, 1.0f, 0.0f);
+            GL.Rotate(angle, 0.0f, 1.0f, 0.0f);
             DrawCube();
             SwapBuffers();
         }

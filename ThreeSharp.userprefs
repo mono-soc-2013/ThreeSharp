@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="materials/MeshBasicMaterial.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="extras/geometries/CubeGeometry.cs">
     <Files>
-      <File FileName="TestThreeSharp/Tester.cs" Line="34" Column="1" />
-      <File FileName="materials/MeshBasicMaterial.cs" Line="10" Column="4" />
+      <File FileName="TestThreeSharp/Game.cs" Line="56" Column="6" />
+      <File FileName="extras/geometries/CubeGeometry.cs" Line="13" Column="3" />
+      <File FileName="core/Geometry.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,12 +12,16 @@
           <Node name="TestThreeSharp" expanded="True" />
           <Node name="ThreeSharp" expanded="True">
             <Node name="cameras" expanded="True" />
+            <Node name="core" expanded="True" />
             <Node name="extras" expanded="True">
-              <Node name="geometries" expanded="True" />
+              <Node name="geometries" expanded="True">
+                <Node name="CubeGeometry.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="materials" expanded="True">
-              <Node name="MeshBasicMaterial.cs" selected="True" />
-            </Node>
+            <Node name="Light" expanded="True" />
+            <Node name="loaders" expanded="True" />
+            <Node name="materials" expanded="True" />
+            <Node name="math" expanded="True" />
             <Node name="objects" expanded="True" />
             <Node name="renderers" expanded="True" />
             <Node name="scenes" expanded="True" />
