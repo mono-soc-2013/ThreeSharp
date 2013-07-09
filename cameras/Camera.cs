@@ -15,6 +15,14 @@ namespace ThreeSharp
 			projectionMatrix = new Matrix4();
 			projectionMatrixInverse = new Matrix4();
 
+		}
+
+		public void lookAt ()
+		{
+			// This routine does not support cameras with rotated and/or translated parent(s)
+
+			Matrix4 m1 = new Matrix4();
+
 
 		}
 	}

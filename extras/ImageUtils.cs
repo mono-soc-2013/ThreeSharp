@@ -12,6 +12,8 @@ namespace ThreeSharp
 
 		public static Texture loadTexture(string path)
 		{
+
+
 			return new Texture();
 		}
 	}

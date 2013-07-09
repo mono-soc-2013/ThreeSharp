@@ -57,6 +57,8 @@
     <Compile Include="math\Math.cs" />
     <Compile Include="core\Geometry.cs" />
     <Compile Include="core\Face4.cs" />
+    <Compile Include="math\Color.cs" />
+    <Compile Include="core\Face3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -11,12 +11,12 @@ namespace ThreeSharp
 		float far;
 
 
-		float fullWidth;
-		float fullHeight;
-		float x;
-		float y;
-		float width;
-		float height;
+		int fullWidth;
+		int fullHeight;
+		int x;
+		int y;
+		int width;
+		int height;
 
 		public PerspectiveCamera (float fov = 50.0f, float aspect = 50.0f, float near = 0.1f, float far =2000.0f)
 		{
@@ -24,6 +24,8 @@ namespace ThreeSharp
 			this.aspect = aspect;
 			this.near = near;
 			this.far = far;
+
+			this.updateProjectionMatrix();
 
 		}
 
