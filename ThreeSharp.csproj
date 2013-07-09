@@ -49,7 +49,6 @@
     <Compile Include="loaders\ImageLoader.cs" />
     <Compile Include="textures\Texture.cs" />
     <Compile Include="Three.cs" />
-    <Compile Include="math\Color.cs" />
     <Compile Include="materials\Material.cs" />
     <Compile Include="core\Object3D.cs" />
     <Compile Include="cameras\Camera.cs" />
@@ -57,6 +56,7 @@
     <Compile Include="objects\Bone.cs" />
     <Compile Include="math\Math.cs" />
     <Compile Include="core\Geometry.cs" />
+    <Compile Include="core\Face4.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
