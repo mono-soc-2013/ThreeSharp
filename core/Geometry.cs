@@ -7,17 +7,17 @@ namespace ThreeSharp
 {
 	public class Geometry
 	{
-		public ArrayList vertices; 
+		public List<Vector3> vertices; 
 		public ArrayList faces;
-		public ArrayList faceVertexUvs;
+		public List<List<List<Vector2>>> faceVertexUvs;
 		public ArrayList __tmpVertices;
 
 
 		public Geometry ()
 		{
-			vertices = new ArrayList();
+			vertices = new List<Vector3>();
 			faces = new ArrayList();
-			faceVertexUvs = new ArrayList();
+			faceVertexUvs = new List<List<List<Vector2>>>();
 		}
 
 		public void computeCentroids ()
@@ -33,9 +33,9 @@ namespace ThreeSharp
 					face3 = (Face3)this.faces[f];
 					face3.centroid.X = 0.0f;face3.centroid.Y = 0.0f; face3.centroid.Z = 0.0f;
 			
-					face3.centroid.Add( (Vector3)vertices[ face3.a ] );
-					face3.centroid.Add( (Vector3)this.vertices[ face3.b ] );
-					face3.centroid.Add( (Vector3)this.vertices[ face3.c ] );	
+					face3.centroid.Add(vertices[ face3.a ] );
+					face3.centroid.Add(this.vertices[ face3.b ] );
+					face3.centroid.Add(this.vertices[ face3.c ] );	
 
 					face3.centroid.Div(3.0f);
 
@@ -43,10 +43,10 @@ namespace ThreeSharp
 					face4 = (Face4)this.faces[f];
 					face4.centroid.X = 0.0f;face4.centroid.Y = 0.0f; face4.centroid.Z = 0.0f;
 
-					face4.centroid.Add( (Vector3)this.vertices[ face4.a] );
-					face4.centroid.Add( (Vector3)this.vertices[ face4.b] );
-					face4.centroid.Add( (Vector3)this.vertices[ face4.c] );	
-					face4.centroid.Add( (Vector3)this.vertices[ face4.d] );	
+					face4.centroid.Add(this.vertices[ face4.a] );
+					face4.centroid.Add(this.vertices[ face4.b] );
+					face4.centroid.Add(this.vertices[ face4.c] );	
+					face4.centroid.Add(this.vertices[ face4.d] );	
 
 					face4.centroid.Div(4.0f);
 				}
@@ -58,7 +58,7 @@ namespace ThreeSharp
 		public int mergeVertices ()
 		{
 			Dictionary<string,int> verticesMap = new Dictionary<string,int> ();
-			ArrayList unique = new ArrayList ();
+			List<Vector3> unique = new List<Vector3> ();
 			Dictionary<int,int> changes = new Dictionary<int, int> ();
 			Vector3 v;
 			String key;
@@ -66,14 +66,14 @@ namespace ThreeSharp
 			double precision = System.Math.Pow (10, precisionPoints);
 			int i, il, j, jl;
 			object face;
-			ArrayList u;
-			ArrayList indices = new ArrayList ();
+			List<Vector2> u;
+			List<int> indices = new List<int>();
 			// reset cache of vertices as it now will be changing.
 			this.__tmpVertices = null;
 
 			for (i=0,il = this.vertices.Count; i<il; i++) {
 
-				v = (Vector3)this.vertices [i];
+				v = this.vertices [i];
 				int[] key_array = {
 					(int)System.Math.Round (v.X * precision),
 					(int)System.Math.Round (v.Y * precision),
@@ -84,7 +84,7 @@ namespace ThreeSharp
 				if (!verticesMap.ContainsKey (key)) {
 
 					verticesMap [key] = i;
-					unique.Add ((Vector3)this.vertices [i]);
+					unique.Add (this.vertices [i]);
 					changes [i] = unique.Count - 1;
 				} else {
 					//console.log('Duplicate vertex found. ', i, ' could be using ', verticesMap[key]);
@@ -95,7 +95,7 @@ namespace ThreeSharp
 			// if faces are completely degenerate after merging vertices, we
 			// have to remove them from the geometry.
 
-			ArrayList faceIndicesToRemove = new ArrayList ();
+			List<int> faceIndicesToRemove = new List<int> ();
 
 			for (i=0,il= faces.Count; i<il; i++) {
 				Face3 face3;
@@ -165,7 +165,7 @@ namespace ThreeSharp
 
 						for (j=0,jl = this.faceVertexUvs.Count; j < jl; j++) {
 
-							u = (ArrayList)((ArrayList)faceVertexUvs [j]) [i];
+							u = faceVertexUvs [j][i];
 							if (u!=null) {
 								u.RemoveAt (dupIndex);
 							}
@@ -199,7 +199,7 @@ namespace ThreeSharp
 
 				for(j=0, jl = this.faceVertexUvs.Count; j<jl;j++)
 				{
-					((ArrayList)this.faceVertexUvs[j]).RemoveAt(j);
+					this.faceVertexUvs[j].RemoveAt(j);
 				}
 			
 			}

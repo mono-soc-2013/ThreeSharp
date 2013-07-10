@@ -113,11 +113,12 @@ namespace ThreeSharp
 
 					scope.faces.Add(face);
 
-					scope.faceVertexUvs.Add(new ArrayList());
-					((ArrayList)scope.faceVertexUvs[0]).Add(new Vector2(ix / gridX, 1 - iy / gridY ));
-					((ArrayList)scope.faceVertexUvs[0]).Add(new Vector2( ix / gridX, 1 - ( iy + 1 ) / gridY ));
-					((ArrayList)scope.faceVertexUvs[0]).Add(new Vector2( ( ix + 1 ) / gridX, 1- ( iy + 1 ) / gridY ));
-					((ArrayList)scope.faceVertexUvs[0]).Add(new Vector2( ( ix + 1 ) / gridX, 1 - iy / gridY ));
+					scope.faceVertexUvs.Add(new List<List<Vector2>>());
+					scope.faceVertexUvs[0].Add(new List<Vector2>());
+					scope.faceVertexUvs[0][0].Add(new Vector2(ix / gridX, 1 - iy / gridY ));
+					scope.faceVertexUvs[0][0].Add(new Vector2( ix / gridX, 1 - ( iy + 1 ) / gridY ));
+					scope.faceVertexUvs[0][0].Add(new Vector2( ( ix + 1 ) / gridX, 1- ( iy + 1 ) / gridY ));
+					scope.faceVertexUvs[0][0].Add(new Vector2( ( ix + 1 ) / gridX, 1 - iy / gridY ));
 
 				}
 			

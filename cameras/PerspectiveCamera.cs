@@ -39,7 +39,7 @@ namespace ThreeSharp
 
 		}
 
-		public void setViewOffset (float fullWidth, float fullHeight, float x, float y, float width, float height)
+		public void setViewOffset (int fullWidth, int fullHeight, int x, int y, int width, int height)
 		{
 			this.fullHeight = fullHeight;
 			this.fullWidth = fullWidth;
