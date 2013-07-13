@@ -4,8 +4,13 @@ namespace ThreeSharp
 {
 	public class Mesh: Object3D
 	{
-		public Mesh (CubeGeometry geometry,MeshBasicMaterial material)
+		public Geometry geometry;
+		public Material material;
+
+		public Mesh (Geometry geometry,Material material)
 		{
+			this.geometry = null;
+			this.material = null;
 
 		}
 	}
