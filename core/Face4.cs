@@ -48,9 +48,9 @@ namespace ThreeSharp
 			face.centroid = new Vector3(this.centroid);
 
 			int i,il;
-			for ( i = 0, il = this.vertexNormals.Count; i < il; i ++ ) face.vertexNormals[ i ] = new Vector3(this.vertexNormals[ i ]);
-			for ( i = 0, il = this.vertexColors.Count; i < il; i ++ ) face.vertexColors[ i ] = Color.FromArgb(this.vertexColors[ i ].ToArgb());
-			for ( i = 0, il = this.vertexTangents.Count; i < il; i ++ ) face.vertexTangents[ i ] = new Vector3(this.vertexTangents[ i ]);
+			for ( i = 0, il = this.vertexNormals.Count; i < il; i ++ ) face.vertexNormals.Add(new Vector3(this.vertexNormals[ i ]));
+			for ( i = 0, il = this.vertexColors.Count; i < il; i ++ ) face.vertexColors.Add(Color.FromArgb(this.vertexColors[ i ].ToArgb()));
+			for ( i = 0, il = this.vertexTangents.Count; i < il; i ++ ) face.vertexTangents.Add(new Vector3(this.vertexTangents[ i ]));
 
 			return face;
 		}

@@ -1,10 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="extras/geometries/CubeGeometry.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="core/EventDispatcher.cs">
     <Files>
-      <File FileName="TestThreeSharp/Game.cs" Line="56" Column="6" />
-      <File FileName="extras/geometries/CubeGeometry.cs" Line="118" Column="65" />
-      <File FileName="core/Geometry.cs" Line="15" Column="28" />
+      <File FileName="extras/ImageUtils.cs" Line="17" Column="49" />
+      <File FileName="Three.cs" Line="17" Column="44" />
+      <File FileName="textures/Texture.cs" Line="49" Column="22" />
+      <File FileName="loaders/ImageLoader.cs" Line="8" Column="3" />
+      <File FileName="core/EventDispatcher.cs" Line="7" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,11 +14,11 @@
           <Node name="TestThreeSharp" expanded="True" />
           <Node name="ThreeSharp" expanded="True">
             <Node name="cameras" expanded="True" />
-            <Node name="core" expanded="True" />
+            <Node name="core" expanded="True">
+              <Node name="EventDispatcher.cs" selected="True" />
+            </Node>
             <Node name="extras" expanded="True">
-              <Node name="geometries" expanded="True">
-                <Node name="CubeGeometry.cs" selected="True" />
-              </Node>
+              <Node name="geometries" expanded="True" />
             </Node>
             <Node name="Light" expanded="True" />
             <Node name="loaders" expanded="True" />

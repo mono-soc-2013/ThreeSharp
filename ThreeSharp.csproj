@@ -59,6 +59,7 @@
     <Compile Include="core\Face4.cs" />
     <Compile Include="math\Color.cs" />
     <Compile Include="core\Face3.cs" />
+    <Compile Include="core\EventDispatcher.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

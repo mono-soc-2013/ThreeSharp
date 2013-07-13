@@ -37,11 +37,11 @@ namespace TestThreeSharp
 
 			scene = new Scene();
 
-			CubeGeometry geometry = new CubeGeometry(200.0f,200.0f,200.0f);
+			CubeGeometry geometry = new CubeGeometry(200,200,200);
 
 
-			Texture texture = ImageUtils.loadTexture("textures/crate.gif");
-			texture.Anisotropy = renderer.getMaxAnisotropy();
+			Texture texture =  (new ImageUtils()).loadTexture("textures/crate.gif");
+			texture.anisotropy = renderer.getMaxAnisotropy();
 
 
 			MeshBasicMaterial material = new MeshBasicMaterial(texture);
