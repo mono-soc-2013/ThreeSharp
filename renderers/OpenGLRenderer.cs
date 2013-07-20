@@ -4,6 +4,7 @@ using OpenTK.Graphics.ES20;
 using OpenTK.Input;
 using OpenTK.Graphics;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace ThreeSharp
 {
@@ -59,7 +60,17 @@ namespace ThreeSharp
 		public object renderPluginsPost = null;
 
 
+		///////////////////////////////////
+		public bool _glExtensionTextureFloat = false;
+		public bool _glExtensionStandardDerivatives =false;
+		public bool _glExtensionTextureFilterAnisotropic =false;
+		public bool _glExtensionCompressedTextureS3TC =false;
+
 		//GPU Capabilities
+
+
+
+		public int _maxAnisotropy = 0;
 
 		public OpenGLRenderer (Color? clearColor =null ,float clearAlpha=1.0f, float devicePixelRatio=1.0f)
 		{
@@ -75,16 +86,36 @@ namespace ThreeSharp
 	    protected override void OnLoad (EventArgs e)
 		{
 			base.OnLoad (e);
-
 			initGL();
 			setDefaultGLState();
+
+
+
+			//_maxAnisotropy = _glExtensionStandardDerivatives? GL.GetTexParameter(Textur
 		}
 
 		public void initGL ()
 		{
-			string[] extensions = (GL.GetString (StringName.Extensions)).Split (' ');
-
+			//string[] extensions = (GL.GetString (StringName.Extensions)).Split (' ');
 			
+			List<string> extensions = new List<string>((GL.GetString (StringName.Extensions)).Split (' '));
+			if(extensions.Contains("OES_texture_float"))
+				_glExtensionTextureFloat = true;
+
+			if(extensions.Contains("OES_standard_derivatives"))
+				_glExtensionStandardDerivatives = true;
+
+			if(extensions.Contains("EXT_texture_filter_anisotropic")||
+			   extensions.Contains("MOZ_EXT_texture_filter_anisotropic")||
+			   extensions.Contains("WEBKIT_EXT_texture_filter_anisotropic"))
+				_glExtensionTextureFilterAnisotropic = true;
+
+			if(extensions.Contains("WEBGL_compressed_texture_s3tc")||
+			   extensions.Contains("MOZ_WEBGL_compressed_texture_s3tc")||
+			   extensions.Contains("WEBKIT_WEBGL_compressed_texture_s3tc"))
+				_glExtensionCompressedTextureS3TC = true;
+
+
 		
 		}
 
@@ -121,7 +152,7 @@ namespace ThreeSharp
 		public int getMaxAnisotropy()
 		{
 
-			return 1;
+			return _maxAnisotropy;
 		}
 
 
