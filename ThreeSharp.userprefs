@@ -1,12 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="core/EventDispatcher.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="renderers/OpenGLRenderer.cs">
     <Files>
-      <File FileName="extras/ImageUtils.cs" Line="17" Column="49" />
-      <File FileName="Three.cs" Line="17" Column="44" />
-      <File FileName="textures/Texture.cs" Line="49" Column="22" />
-      <File FileName="loaders/ImageLoader.cs" Line="8" Column="3" />
-      <File FileName="core/EventDispatcher.cs" Line="7" Column="23" />
+      <File FileName="renderers/OpenGLRenderer2.cs" Line="55" Column="42" />
+      <File FileName="renderers/OpenGLRenderer.cs" Line="12" Column="3" />
+      <File FileName="TestThreeSharp/Tester.cs" Line="33" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,20 +12,12 @@
           <Node name="TestThreeSharp" expanded="True" />
           <Node name="ThreeSharp" expanded="True">
             <Node name="cameras" expanded="True" />
-            <Node name="core" expanded="True">
-              <Node name="EventDispatcher.cs" selected="True" />
-            </Node>
-            <Node name="extras" expanded="True">
-              <Node name="geometries" expanded="True" />
-            </Node>
-            <Node name="Light" expanded="True" />
+            <Node name="extras" expanded="True" />
             <Node name="loaders" expanded="True" />
             <Node name="materials" expanded="True" />
-            <Node name="math" expanded="True" />
-            <Node name="objects" expanded="True" />
-            <Node name="renderers" expanded="True" />
-            <Node name="scenes" expanded="True" />
-            <Node name="textures" expanded="True" />
+            <Node name="renderers" expanded="True">
+              <Node name="OpenGLRenderer.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -67,6 +67,19 @@ namespace ThreeSharp
 		public const int FaceColors = 1;
 		public const int VertexColors = 2;
 
+		// GL STATE CONSTANTS
+
+		public const int CullFaceNone = 0;
+		public const int CullFaceBack = 1;
+		public const int CullFaceFront = 2;
+		public const int CullFaceFrontBack = 3;
+
+		// SHADOWING TYPES
+
+		public const int BasicShadowMap = 0;
+		public const int PCFShadowMap = 1;
+		public const int PCFSoftShadowMap = 2;
+
 		public Three ()
 		{
 

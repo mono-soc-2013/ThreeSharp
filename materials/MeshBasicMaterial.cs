@@ -26,7 +26,7 @@ namespace ThreeSharp
 
 		public MeshBasicMaterial (Texture map)
 		{
-			this.color = (Color)ColorConverter.ConvertFromString("#FFFFFF");
+			this.color = (Color)(new ColorConverter()).ConvertFromString("#FFFFFF");
 
 			this.map = null;
 

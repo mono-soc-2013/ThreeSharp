@@ -39,7 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="renderers\OpenGLRenderer.cs" />
     <Compile Include="cameras\PerspectiveCamera.cs" />
     <Compile Include="extras\geometries\CubeGeometry.cs" />
     <Compile Include="scenes\Scene.cs" />
@@ -60,6 +59,8 @@
     <Compile Include="math\Color.cs" />
     <Compile Include="core\Face3.cs" />
     <Compile Include="core\EventDispatcher.cs" />
+    <Compile Include="renderers\OpenGLRenderer2.cs" />
+    <Compile Include="renderers\OpenGLRenderer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
