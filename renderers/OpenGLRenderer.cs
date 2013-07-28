@@ -68,9 +68,24 @@ namespace ThreeSharp
 
 		//GPU Capabilities
 
-
-
 		public int _maxAnisotropy = 0;
+
+
+		//internal state cache
+		public int _currentMaterialId = -1;
+
+		// light arrays cache
+		public bool _lightsNeedUpdate = true;
+
+
+        // camera matrices cache
+        public Matrix4 _projScreenMatrix = new Matrix4();
+        public Matrix4 _projScreenMatrixPS = new Matrix4();
+
+
+        //// frustum
+
+        public Frustum _frustum = new Frustum(null,null,null,null,null,null);
 
 		public OpenGLRenderer (Color? clearColor =null ,float clearAlpha=1.0f, float devicePixelRatio=1.0f)
 		{
@@ -79,7 +94,7 @@ namespace ThreeSharp
 			_clearColor = new Color4(clearColor.HasValue?clearColor.Value:(Color)(new ColorConverter()).ConvertFromString("#000000"));
 			_clearAlpha = clearAlpha;
 
-			devicePixelRatio = devicePixelRatio;
+			this.devicePixelRatio = devicePixelRatio;
 
 		}
 
@@ -89,7 +104,7 @@ namespace ThreeSharp
 			initGL();
 			setDefaultGLState();
 
-
+			GL.GetBufferParameter(BufferTarget.ArrayBuffer,BufferParameterName.BufferSize,out _maxAnisotropy);
 
 			//_maxAnisotropy = _glExtensionStandardDerivatives? GL.GetTexParameter(Textur
 		}
@@ -114,7 +129,6 @@ namespace ThreeSharp
 			   extensions.Contains("MOZ_WEBGL_compressed_texture_s3tc")||
 			   extensions.Contains("WEBKIT_WEBGL_compressed_texture_s3tc"))
 				_glExtensionCompressedTextureS3TC = true;
-
 
 		
 		}
@@ -156,11 +170,43 @@ namespace ThreeSharp
 		}
 
 
-		public void render ()
+		public void render (Scene scene, Camera camera)
 		{
+			List<Light> lights = scene.__lights;
+			Fog fog = scene.fog;
+
+			//reset caching for this frame
+			_currentMaterialId = -1;
+			_lightsNeedUpdate = true;
 
 
+			//update scene graph
+            if (scene.autoUpdate)
+                scene.updateMatrixWorld();
+
+            // update camera matrices and frustum
+
+            if (camera.parent == null)
+                camera.updateMatrixWorld();
+
+            camera.matrixWorldInverse.Invert();
+
+            Matrix4.Mult(ref camera.projectionMatrix, ref camera.matrixWorldInverse, out _projScreenMatrix);
+
+            _frustum.setFromMatrix(_projScreenMatrix);
+
+            // update WebGL objects
+
+            //if(this.autoUpdateObjects)
+
+            
 		}
+
+
+        public void initWebGLObjects()
+        {
+
+        }
 	}
 }
 

@@ -1,23 +1,25 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="renderers/OpenGLRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="core/Object3D.cs">
     <Files>
-      <File FileName="renderers/OpenGLRenderer2.cs" Line="55" Column="42" />
-      <File FileName="renderers/OpenGLRenderer.cs" Line="12" Column="3" />
-      <File FileName="TestThreeSharp/Tester.cs" Line="33" Column="34" />
+      <File FileName="renderers/OpenGLRenderer.cs" Line="175" Column="5" />
+      <File FileName="TestThreeSharp/Tester.cs" Line="51" Column="12" />
+      <File FileName="scenes/Scene.cs" Line="19" Column="32" />
+      <File FileName="core/Object3D.cs" Line="113" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="TestThreeSharp" expanded="True" />
           <Node name="ThreeSharp" expanded="True">
-            <Node name="cameras" expanded="True" />
-            <Node name="extras" expanded="True" />
-            <Node name="loaders" expanded="True" />
-            <Node name="materials" expanded="True" />
-            <Node name="renderers" expanded="True">
-              <Node name="OpenGLRenderer.cs" selected="True" />
+            <Node name="core" expanded="True">
+              <Node name="Object3D.cs" selected="True" />
             </Node>
+            <Node name="math" expanded="True" />
+            <Node name="objects" expanded="True" />
+            <Node name="renderers" expanded="True" />
+            <Node name="scenes" expanded="True" />
+            <Node name="textures" expanded="True" />
           </Node>
         </State>
       </Pad>

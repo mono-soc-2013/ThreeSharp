@@ -1,16 +1,25 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace ThreeSharp
 {
 	public class Scene: Object3D
 	{
 
-		public ArrayList __lights;
+		public List<Light> __lights;
+		public Fog fog;
+		public bool autoUpdate;
+
+        //dynamic parameters in render 
+        public 
 
 		public Scene ()
 		{
-			__lights = new ArrayList();
+            __lights = new List<Light>();
+			fog = null;
+
+			autoUpdate = true; //checked by the renderer 
 
 		}
 

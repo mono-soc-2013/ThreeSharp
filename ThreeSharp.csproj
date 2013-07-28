@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,6 +41,8 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="cameras\PerspectiveCamera.cs" />
     <Compile Include="extras\geometries\CubeGeometry.cs" />
+    <Compile Include="math\Frustum.cs" />
+    <Compile Include="math\Plane.cs" />
     <Compile Include="scenes\Scene.cs" />
     <Compile Include="extras\ImageUtils.cs" />
     <Compile Include="materials\MeshBasicMaterial.cs" />
@@ -61,20 +63,9 @@
     <Compile Include="core\EventDispatcher.cs" />
     <Compile Include="renderers\OpenGLRenderer2.cs" />
     <Compile Include="renderers\OpenGLRenderer.cs" />
+    <Compile Include="scenes\Fog.cs" />
+    <Compile Include="math\Matrix44.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="renderers\" />
-    <Folder Include="cameras\" />
-    <Folder Include="extras\" />
-    <Folder Include="extras\geometries\" />
-    <Folder Include="scenes\" />
-    <Folder Include="materials\" />
-    <Folder Include="objects\" />
-    <Folder Include="loaders\" />
-    <Folder Include="textures\" />
-    <Folder Include="math\" />
-    <Folder Include="core\" />
-    <Folder Include="Light\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
