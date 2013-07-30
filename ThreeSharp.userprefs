@@ -4,8 +4,7 @@
     <Files>
       <File FileName="renderers/OpenGLRenderer.cs" Line="175" Column="5" />
       <File FileName="TestThreeSharp/Tester.cs" Line="51" Column="12" />
-      <File FileName="scenes/Scene.cs" Line="19" Column="32" />
-      <File FileName="core/Object3D.cs" Line="113" Column="5" />
+      <File FileName="core/Object3D.cs" Line="95" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

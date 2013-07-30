@@ -8,6 +8,18 @@ using System.Collections.Generic;
 
 namespace ThreeSharp
 {
+    public struct HashMapStruct
+    {
+        public int hash;
+        public int counter;
+
+        public HashMapStruct(int hash, int counter)
+        {
+            this.hash = hash;
+            this.counter = counter;
+        }
+    }
+
 	public class OpenGLRenderer: GameWindow
 	{
 
@@ -86,6 +98,10 @@ namespace ThreeSharp
         //// frustum
 
         public Frustum _frustum = new Frustum(null,null,null,null,null,null);
+
+
+        // internal state cache
+        int _geometryGroupCounter = 0;
 
 		public OpenGLRenderer (Color? clearColor =null ,float clearAlpha=1.0f, float devicePixelRatio=1.0f)
 		{
@@ -203,9 +219,168 @@ namespace ThreeSharp
 		}
 
 
-        public void initWebGLObjects()
+        public void initWebGLObjects(Scene scene)
+        {
+            //Scene initialization 
+
+
+            //Object added length >> while
+
+
+            //Object removed length >> while
+
+            while (scene.__objectsAdded.Count > 0)
+            {
+
+            }
+
+
+            // update must be called after objects adding / removal
+            for (int o = 0; o < scene.__webglObjects.Count; o++)
+            {
+                addObject(scene.__objectsAdded[0],scene);
+            }
+        }
+
+
+        public void addObject(Object3D object3d, Scene scene)
         {
 
+            Geometry geometry;
+            Material material;
+
+            if (!object3d.__webglInit)
+            {
+                object3d.__webglInit = true;
+                Mesh mesh = (Mesh)object3d;
+                mesh._modelViewMatrix = new Matrix4();
+                mesh._normalMatrix = new Matrix4();
+                GeoGroupStruct geometryGroup;
+
+                if (mesh.geometry != null && !mesh.geometry.__webglInit)
+                {
+                    mesh.geometry.__webglInit = true;
+
+                    //Add event listner to geometty 
+                    //Not implemented
+                }
+
+                geometry = mesh.geometry;
+
+                if (geometry == null)
+                {
+                    // fail silently for now
+                }
+                else if(object3d is Mesh)
+                {
+                    material = mesh.material;
+
+                    if (geometry.geometryGroups == null)
+                    {
+                        sortFacesByMaterial(geometry, material);
+                    }
+
+                    // create separate VBOs per geometry chunk
+                    foreach (string key in geometry.geometryGroups.Keys)
+                    {
+                        geometryGroup = geometry.geometryGroups[key];
+                        // initialise VBO on the first access
+
+                        if (!geometryGroup.__webglVertexBuffer)
+                        {
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        // Geometry splitting
+        public void sortFacesByMaterial(Geometry geometry, Material material)
+        {
+            Object face;
+            int materialIndex, vertices;
+            string groupHash;
+            Dictionary<int, HashMapStruct> hash_map = new Dictionary<int, HashMapStruct>();
+
+            int numMorphTargets = geometry.morphTargets.Count;
+            int numMorphNormals = geometry.morphNormals.Count;
+
+            bool usesFaceMaterial = material.GetType() == typeof(MeshBasicMaterial);
+
+            //Check this code later 
+            geometry.geometryGroups = new Dictionary<string, GeoGroupStruct>();
+
+            for (int f = 0; f < geometry.faces.Count; f++)
+            {
+               
+                
+                face = geometry.faces[f];
+                materialIndex = usesFaceMaterial? (face is Face3?((Face3)face).materialIndex:((Face4)face).materialIndex):0;
+
+
+                if (!hash_map.ContainsKey(materialIndex))
+                {
+                    hash_map[materialIndex] = new HashMapStruct(materialIndex, 0);
+                }
+
+                groupHash = hash_map[materialIndex].hash.ToString() + "_" + hash_map[materialIndex].counter;
+
+
+                if (!geometry.geometryGroups.ContainsKey(groupHash))
+                {
+                    geometry.geometryGroups[groupHash] = new GeoGroupStruct(new List<Face3>(), new List<Face4>(), materialIndex, 0, numMorphTargets, numMorphNormals);
+
+                }
+
+                vertices = face is Face3 ? 3 : 4;
+
+                if (geometry.geometryGroups[groupHash].vertices + vertices > 65535)
+                {
+                    hash_map[materialIndex] = new HashMapStruct(hash_map[materialIndex].hash, hash_map[materialIndex].counter + 1);
+                    groupHash = hash_map[materialIndex].hash.ToString() + '_' + hash_map[materialIndex].counter.ToString();
+
+                    if (!geometry.geometryGroups.ContainsKey(groupHash))
+                    {
+                        geometry.geometryGroups[groupHash] = new GeoGroupStruct(new List<Face3>(), new List<Face4>(), materialIndex, 0, numMorphTargets, numMorphNormals);
+                    }
+
+                }
+
+                if (face is Face3)
+                {
+                    GeoGroupStruct geogroupstruct = geometry.geometryGroups[groupHash];
+                    geogroupstruct.faces3.Add((Face3)face);
+                    geometry.geometryGroups[groupHash] = geogroupstruct;
+                }
+                else
+                {
+                    GeoGroupStruct geogroupstruct = geometry.geometryGroups[groupHash];
+                    geogroupstruct.faces4.Add((Face4)face);
+                    geometry.geometryGroups[groupHash] = geogroupstruct;
+                }
+
+
+                GeoGroupStruct geogroupstruc = geometry.geometryGroups[groupHash];
+                geogroupstruc.vertices += vertices;
+                geometry.geometryGroups[groupHash] = geogroupstruc;
+
+                geometry.geometryGroupsList = new List<GeoGroupStruct>();
+
+                foreach (string key in geometry.geometryGroups.Keys)
+                {
+                    GeoGroupStruct temp = geometry.geometryGroups[key];
+                    temp.id = _geometryGroupCounter++;
+                    geometry.geometryGroups[key] = temp;
+
+                    geometry.geometryGroupsList.Add(geometry.geometryGroups[key]);
+                }
+
+            }
         }
 	}
 }

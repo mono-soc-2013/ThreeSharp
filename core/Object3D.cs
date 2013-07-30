@@ -24,9 +24,12 @@ namespace ThreeSharp
 		public string eulerOrder = Object3D.defaultEulerOrder;
         public Quaternion quaternion;
 
+        public bool __webglInit;
+
 
 		public Object3D ()
 		{
+            __webglInit = false;
 			position = new Vector3();
 			children = new List<Object3D>();
 

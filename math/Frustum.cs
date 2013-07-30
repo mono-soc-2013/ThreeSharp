@@ -6,7 +6,7 @@ using OpenTK;
 
 namespace ThreeSharp
 {
-    class Frustum
+    public class Frustum
     {
 
         public Plane[] planes;

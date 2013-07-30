@@ -5,19 +5,62 @@ using System.Collections.Generic;
 
 namespace ThreeSharp
 {
+   
+
+    public struct GeoGroupStruct{
+        public int id;
+        public bool __webglVertexBuffer;
+        public List<Face3> faces3;
+        public List<Face4> faces4;
+        public int materialIndex;
+        public int vertices;
+        public int numMorphTargets;
+        public int numMorphNormals;
+
+        public GeoGroupStruct(List<Face3> faces3, List<Face4> faces4, int materialIndex, int vertices, int numMorphTargets, int numMorphNormals)
+        {
+            this.faces3 = faces3;
+            this.faces4 = faces4;
+            this.materialIndex = materialIndex;
+            this.vertices = vertices;
+            this.numMorphTargets = numMorphTargets;
+            this.numMorphNormals = numMorphNormals;
+            this.id = 0;
+            this.__webglVertexBuffer = false;
+        }
+    }
+
 	public class Geometry
 	{
 		public List<Vector3> vertices; 
 		public ArrayList faces;
 		public List<List<List<Vector2>>> faceVertexUvs;
 		public ArrayList __tmpVertices;
+        public Sphere boundingSphere = null;
 
+        public List<Object> morphTargets = null;
+        public List<Object> morphColors = null;
+        public List<Object> morphNormals = null;
+
+        public bool __webglInit;
+
+        public Dictionary<string,GeoGroupStruct> geometryGroups = null;
+        public List<GeoGroupStruct> geometryGroupsList = null;
+
+        public bool _normalMatrix;
 
 		public Geometry ()
 		{
 			vertices = new List<Vector3>();
+
+            morphTargets = new List<object>();
+            morphColors = new List<object>();
+            morphNormals = new List<object>();
+
 			faces = new ArrayList();
 			faceVertexUvs = new List<List<List<Vector2>>>();
+            _normalMatrix = false;
+            __webglInit = false;
 		}
 
 		public void computeCentroids ()
@@ -210,6 +253,17 @@ namespace ThreeSharp
 			this.vertices = unique;
 			return diff;
 		}
+
+
+        public void computeBoundingSphere()
+        {
+            if (this.boundingSphere == null)
+            {
+                this.boundingSphere = new Sphere();
+            }
+
+            this.boundingSphere.setFromCenterAndPoints(this.boundingSphere.center, this.vertices);
+        }
 	}
 }
 

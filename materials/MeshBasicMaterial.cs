@@ -24,7 +24,8 @@ namespace ThreeSharp
 		public bool morphTargets;
 
 
-		public MeshBasicMaterial (Texture map)
+
+		public MeshBasicMaterial (Texture map=null)
 		{
 			this.color = (Color)(new ColorConverter()).ConvertFromString("#FFFFFF");
 
@@ -43,15 +44,18 @@ namespace ThreeSharp
 
 			this.shading = Three.SmoothShading;
 
-			this.wireframe = true;
+			this.wireframe = false;
 			this.wireframeLineWidth = 1;
 			this.wireframeLinecap = "round";
 			this.wireframeLineJoin = "round";
 
 			this.skinning = false;
 			this.morphTargets = false;
-			
-			this.setValues(map);
+
+            if (map!=null)
+            {
+                this.setValues(map);
+            }
 		}
 	}
 }

@@ -7,7 +7,7 @@ using OpenTK;
 namespace ThreeSharp
 {
     
-    class Plane
+    public class Plane
     {
         //default values
         Vector3 topass = new Vector3(1, 0, 0);

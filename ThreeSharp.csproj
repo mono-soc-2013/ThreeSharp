@@ -41,8 +41,10 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="cameras\PerspectiveCamera.cs" />
     <Compile Include="extras\geometries\CubeGeometry.cs" />
+    <Compile Include="materials\MeshFaceMaterial.cs" />
     <Compile Include="math\Frustum.cs" />
     <Compile Include="math\Plane.cs" />
+    <Compile Include="math\Sphere.cs" />
     <Compile Include="scenes\Scene.cs" />
     <Compile Include="extras\ImageUtils.cs" />
     <Compile Include="materials\MeshBasicMaterial.cs" />

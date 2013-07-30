@@ -2,7 +2,7 @@ using System;
 
 namespace ThreeSharp
 {
-	public class Bone
+	public class Bone: Object3D
 	{
 		public Bone ()
 		{
