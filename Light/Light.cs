@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace ThreeSharp
 {
-	public class Light
+	public class Light: Object3D
 	{
 		public Color color;
 

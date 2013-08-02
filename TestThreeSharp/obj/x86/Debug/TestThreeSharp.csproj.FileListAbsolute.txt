@@ -1,0 +1,2 @@
+E:\GSOC\ThreeSharp\TestThreeSharp\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\GSOC\ThreeSharp\TestThreeSharp\obj\x86\Debug\TestThreeSharp.csprojResolveAssemblyReference.cache

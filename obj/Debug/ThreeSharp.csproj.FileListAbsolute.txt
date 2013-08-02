@@ -1,0 +1,5 @@
+E:\GSOC\ThreeSharp\bin\Debug\ThreeSharp.dll
+E:\GSOC\ThreeSharp\bin\Debug\ThreeSharp.pdb
+E:\GSOC\ThreeSharp\bin\Debug\OpenTK.dll
+E:\GSOC\ThreeSharp\obj\Debug\ThreeSharp.dll
+E:\GSOC\ThreeSharp\obj\Debug\ThreeSharp.pdb

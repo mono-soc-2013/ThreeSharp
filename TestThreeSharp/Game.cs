@@ -177,7 +177,6 @@ namespace TestThreeSharp
             GL.LoadMatrix(ref modelviewMatrix);
             GL.Rotate(angle, 0.0f, 1.0f, 0.0f);
  
- 
             DrawCube();
             SwapBuffers();
         }
